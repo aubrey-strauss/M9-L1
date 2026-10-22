@@ -27,7 +27,7 @@ function App() {
           imageUrl: '/earbuds.jpg',
           inStock: true,
         }}
-        onAddToCart={(productId) => console.log(`Adding product with ID: ${productId} to cart`)}
+        onAddToCart={(productId) => alert(`Adding product with ID: ${productId} to cart`)}
       />
     </div>
   );
