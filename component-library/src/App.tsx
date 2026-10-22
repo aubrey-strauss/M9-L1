@@ -29,7 +29,9 @@ function App() {
           setMessage(`Editing user with ID: ${userId}`);
           setShowAlert(true);
         }}
-      />
+      >
+        <AlertBox type="warning" message="Profile 80% complete" />
+      </UserProfileCard>
 
       <ProductDisplay
         product={{

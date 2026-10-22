@@ -1,32 +1,16 @@
-# React + TypeScript + Vite
+Reflection Questions
+How did you handle optional props in your components?
+    Only rendering something that was passed using && and using ? for optional props
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+What considerations did you make when designing the component interfaces?
+    keeping it simple by using just an id for callbacks 
+    using children to nest alerts
 
-Currently, two official plugins are available:
+How did you ensure type safety across your components?
+    making sure they're all in the same file (index.ts)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+What challenges did you face when implementing component composition?
+    deciding where to put the alerts
+    using null vs true/false. I went with true/false bc we hadn't gone over null yet when the lab was assigned.
+    nesting children properly
