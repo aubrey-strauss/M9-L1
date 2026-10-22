@@ -16,7 +16,7 @@ function App() {
           role: 'Application Analyst',
           avatarUrl: '/avatar.jpg',
         }}
-        onEdit={(userId) => console.log(`Editing user with ID: ${userId}`)}
+        onEdit={(userId) => alert(`Editing user with ID: ${userId}`)}
       />
       <ProductDisplay
         product={{
