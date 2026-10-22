@@ -21,6 +21,8 @@ export interface User {
   avatarUrl?: string;
 }
  
+//Create reusable React components with TypeScript interfaces for props.
+//Implement proper prop handling and validation.
 export interface UserProfileCardProps {
   user: User;
   showEmail?: boolean;
