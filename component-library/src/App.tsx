@@ -1,5 +1,6 @@
 import { AlertBox } from './Components/AlertBox/AlertBox';
 import { UserProfileCard } from './Components/UserProfileCard/UserProfileCard';
+import { ProductDisplay } from './Components/ProductDisplay/ProductDisplay';
 
 
 function App() {
@@ -16,6 +17,17 @@ function App() {
           avatarUrl: '/avatar.jpg',
         }}
         onEdit={(userId) => console.log(`Editing user with ID: ${userId}`)}
+      />
+      <ProductDisplay
+        product={{
+          id: '1',
+          name: 'Wireless Earbuds',
+          price: 99.99,
+          description: 'High-quality wireless earbuds with noise cancellation.',
+          imageUrl: '/earbuds.jpg',
+          inStock: true,
+        }}
+        onAddToCart={(productId) => console.log(`Adding product with ID: ${productId} to cart`)}
       />
     </div>
   );
