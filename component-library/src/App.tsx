@@ -1,12 +1,21 @@
+import { useState } from 'react';
 import { AlertBox } from './Components/AlertBox/AlertBox';
 import { UserProfileCard } from './Components/UserProfileCard/UserProfileCard';
 import { ProductDisplay } from './Components/ProductDisplay/ProductDisplay';
 
-
 function App() {
+  const [showAlert, setShowAlert] = useState(false);
+  const [message, setMessage] = useState('');
+
   return (
     <div>
-      <AlertBox type="success" message="hi" />
+      {showAlert && (
+        <AlertBox
+          type="success"
+          message={message}
+          onClose={() => setShowAlert(false)}
+        />
+      )}
 
       <UserProfileCard
         user={{
@@ -16,8 +25,12 @@ function App() {
           role: 'Application Analyst',
           avatarUrl: '/avatar.jpg',
         }}
-        onEdit={(userId) => alert(`Editing user with ID: ${userId}`)}
+        onEdit={(userId) => {
+          setMessage(`Editing user with ID: ${userId}`);
+          setShowAlert(true);
+        }}
       />
+
       <ProductDisplay
         product={{
           id: '1',
@@ -27,11 +40,13 @@ function App() {
           imageUrl: '/earbuds.jpg',
           inStock: true,
         }}
-        onAddToCart={(productId) => alert(`Adding product with ID: ${productId} to cart`)}
+        onAddToCart={(productId) => {
+          setMessage(`Adding product with ID: ${productId} to cart`);
+          setShowAlert(true);
+        }}
       />
     </div>
   );
 }
 
 export default App;
-
